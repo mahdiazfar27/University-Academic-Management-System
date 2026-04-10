@@ -1,0 +1,479 @@
+.resultsContainer {
+  padding: 32px;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.titleArea h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.headerActions {
+  display: flex;
+  gap: 12px;
+}
+
+.exportBtn, .printBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.exportBtn {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  color: #1e3a8a;
+}
+
+.printBtn {
+  background-color: #1e3a8a;
+  border: none;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.2);
+}
+
+/* Info Section */
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 1200px) {
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.profileCard {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.profileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.regularBadge {
+  background-color: #f0fdf4;
+  color: #16a34a;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 48px;
+}
+
+@media (max-width: 600px) {
+  .detailsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.infoLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.infoValue {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* GPA Widgets */
+.gpaColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  .gpaColumn {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .gpaCard {
+    flex: 1;
+    min-width: 250px;
+  }
+}
+
+.gpaCard {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.semesterGpaCard {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  color: white;
+}
+
+.cardLabel {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+
+.gpaValue {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.gpaTrend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.cumulativeCard .gpaValue {
+  color: #ef4444;
+}
+
+.progressBarBg {
+  height: 6px;
+  background-color: #f1f5f9;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.progressBarFill {
+  height: 100%;
+  background-color: #ef4444;
+  border-radius: 3px;
+}
+
+.deptInfo {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+/* Table Section */
+.resultsCard {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  margin: 0 -32px;
+  padding: 0 32px;
+}
+
+@media (max-width: 768px) {
+  .resultsCard {
+    padding: 20px;
+  }
+  .tableWrapper {
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+}
+
+.resultsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.legend {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot { width: 8px; height: 8px; border-radius: 50%; }
+
+.resultsTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.resultsTable th {
+  padding: 16px 12px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.resultsTable td {
+  padding: 20px 12px;
+  font-size: 14px;
+  color: #475569;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.courseCode {
+  font-weight: 800;
+  color: #1e3a8a;
+}
+
+.courseTitle {
+  font-weight: 600;
+}
+
+.gradeBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 28px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* Grade Themes */
+.grade_A_plus { background-color: #eff6ff; color: #1e3a8a; }
+.grade_A { background-color: #f1f5f9; color: #475569; }
+.grade_A_minus { background-color: #f8fafc; color: #64748b; }
+.grade_B_plus { background-color: #fdf4ff; color: #a21caf; }
+
+.tableFooter {
+  margin-top: 32px;
+  padding: 24px;
+  background-color: #fbfcfe;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+@media (max-width: 600px) {
+  .tableFooter {
+    justify-content: center;
+    text-align: center;
+  }
+  .calculatedGpa {
+    padding-left: 0;
+    border-left: none;
+    width: 100%;
+  }
+}
+
+.footerItem {
+  text-align: center;
+}
+
+.footerLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.footerValue {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.calculatedGpa {
+  padding-left: 32px;
+  border-left: 2px solid #e2e8f0;
+}
+
+.calculatedGpa .footerValue {
+  font-size: 24px;
+  color: #1e3a8a;
+}
+
+/* Trend Chart */
+.trendCard {
+  margin-top: 24px;
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.chartContainer {
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 20px 0;
+  position: relative;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.barWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.bar {
+  width: 60px;
+  background-color: #f1f5f9;
+  border-radius: 6px 6px 0 0;
+  position: relative;
+}
+
+.activeBar {
+  background-color: #1e3a8a;
+}
+
+.barTooltip {
+  position: absolute;
+  top: -30px;
+  background-color: #1e40af;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.barLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+/* Page Footer */
+.pageFooter {
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .pageFooter {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footerContent {
+    flex-direction: column;
+    align-items: center;
+  }
+  .generationArea {
+    text-align: center;
+  }
+}
+
+.footerContent {
+  display: flex;
+  gap: 24px;
+}
+
+.sealArea {
+  width: 60px;
+  height: 60px;
+  opacity: 0.4;
+}
+
+.disclaimer {
+  max-width: 400px;
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.generationArea {
+  text-align: right;
+}
+
+.genLabel {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.genTime {
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+  margin-top: 4px;
+}

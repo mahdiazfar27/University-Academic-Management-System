@@ -1,0 +1,332 @@
+.paymentContainer {
+  padding: 32px;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .paymentContainer {
+    padding: 16px;
+  }
+}
+
+.headerSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.titleArea h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.showExpiredBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e3a8a;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Semester Card */
+.semesterCard {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 32px;
+  border: 1px solid #f1f5f9;
+}
+
+.cardHeader {
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fbfcfe;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .cardHeader {
+    padding: 20px;
+  }
+}
+
+.semesterName {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.calendarIcon {
+  width: 40px;
+  height: 40px;
+  background-color: #eff6ff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e3a8a;
+}
+
+.semesterTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.activeBadge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.menuIcon {
+  color: #1e3a8a;
+  cursor: pointer;
+}
+
+/* Table */
+.tableWrapper {
+  padding: 0 24px 24px;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .tableWrapper {
+    padding: 0 20px 20px;
+  }
+}
+
+.paymentTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 750px;
+}
+
+.paymentTable th {
+  padding: 16px 12px;
+  text-align: left;
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.paymentTable td {
+  padding: 20px 12px;
+  font-size: 13px;
+  color: #475569;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.paymentTable tr:last-child td {
+  border-bottom: none;
+}
+
+.snCol { font-weight: 700; color: #0f172a; width: 40px; }
+.dateCol { width: 100px; line-height: 1.4; }
+.feeCol { font-weight: 700; color: #0f172a; }
+.amountCol { font-weight: 800; color: #0f172a; }
+.methodCol { font-weight: 500; }
+.transIdCol { font-family: monospace; font-size: 12px; opacity: 0.8; }
+
+/* Status Badges */
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.dot { width: 6px; height: 6px; border-radius: 50%; }
+
+.completed { background-color: #ecfdf5; color: #10b981; }
+.completed .dot { background-color: #10b981; }
+
+.expired { background-color: #fef2f2; color: #ef4444; }
+.expired .dot { background-color: #ef4444; }
+
+.cancelled { background-color: #fff7ed; color: #f59e0b; }
+.cancelled .dot { background-color: #f59e0b; }
+
+.eyeIcon {
+  color: #94a3b8;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.eyeIcon:hover {
+  color: #1e3a8a;
+}
+
+.cardFooter {
+  padding: 16px 32px;
+  background-color: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f1f5f9;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .cardFooter {
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  .totalLabel {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.footerNote {
+  font-size: 11px;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.totalLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #475569;
+}
+
+.totalValue {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e3a8a;
+}
+
+/* Bottom Widgets */
+.widgetsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .widgetsRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.widgetCard {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.valueCard {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  color: white;
+}
+
+.widgetLabel {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.widgetAmount {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.widgetStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.balanceAmount {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.balanceStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #10b981;
+}
+
+.makePaymentCard {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.payBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.2);
+  transition: transform 0.2s;
+}
+
+.payBtn:hover {
+  transform: translateY(-2px);
+}

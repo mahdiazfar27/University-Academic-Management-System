@@ -1,0 +1,70 @@
+.header {
+  background-color: white;
+  padding: 8px 12px;
+  margin: 16px 32px 0 auto;
+  width: fit-content;
+  position: sticky;
+  top: 16px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 99px;
+  border: 1px solid #f1f5f9;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+}
+
+.messageBtn,
+.logoutBtn {
+  background: none;
+  border: none;
+  color: #475569;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.messageBtn:hover,
+.logoutBtn:hover {
+  background-color: #f1f5f9;
+  color: #1e3a8a;
+}
+
+.logoutBtn:hover {
+  color: #ef4444; /* Specific red for logout hover */
+}
+
+@media (max-width: 1024px) {
+  .header {
+    margin: 12px 16px 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin: 72px 16px 0 auto; /* Moved down to accommodate top mobile sidebar */
+    position: relative;
+    top: 0;
+    z-index: 50;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    margin: 72px 12px 0 auto;
+    padding: 6px 10px;
+  }
+}
