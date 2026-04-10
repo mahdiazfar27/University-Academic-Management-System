@@ -88,8 +88,8 @@ main branch:
 ```bash
 cd "Universe Academic Management System"
 git init
-git config user.name "mahdiazfar27"
-git config user.email "mahdi.azfar.talukder@gmail.com"
+git config user.name "Your Name"
+git config user.email "your.email@company.com"
 ```
 
 ### **Step 2: Create Root .gitignore**
@@ -291,7 +291,7 @@ git checkout -b feature/tm1-database-auth
 cd server
 # Assuming composer.lock exists, add it:
 git add composer.json composer.lock .env.example .gitignore artisan phpunit.xml
-git commit -m " Add Laravel backend dependencies and configuration"
+git commit -m "chore: Add Laravel backend dependencies and configuration"
 cd ..
 ```
 - **Commit Message**:
