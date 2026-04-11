@@ -1,0 +1,358 @@
+.container {
+  padding: 32px;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: #0f172a;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+}
+
+/* Header Sections */
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.titleArea h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.titleArea p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.exportBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.2);
+}
+
+/* Metrics Grid */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 1024px) {
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metricCard {
+  background: white;
+  padding: 32px;
+  border-radius: 20px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.metricHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.iconBox {
+  width: 44px;
+  height: 44px;
+  background-color: #f1f5f9;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f172a;
+}
+
+.trendBadge {
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.trendGrow { background-color: #ecfdf5; color: #10b981; }
+.trendStable { background-color: #f8fafc; color: #94a3b8; }
+.trendNew { background-color: #eff6ff; color: #3b82f6; }
+
+.metricLabel {
+  font-size: 10px;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.metricValue {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 8px 0;
+  display: block;
+}
+
+.metricSubtext {
+  font-size: 11px;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+/* Main Content Layout */
+.mainLayout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 1200px) {
+  .mainLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Administrative Logs Area */
+.logsCard {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.logsHeader {
+  margin-bottom: 24px;
+}
+
+.logsHeader h2 {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 10px;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.table td {
+  padding: 20px 16px;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.actionCell {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+  max-width: 250px;
+}
+
+.userCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userName {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.timeCell {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.statusBadge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.success { background-color: #ecfdf5; color: #10b981; }
+.pending { background-color: #eff6ff; color: #3b82f6; }
+
+/* Right Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.widgetCard {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.widgetTitle {
+  font-size: 11px;
+  font-weight: 800;
+  color: #0f172a;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: block;
+}
+
+/* Admin Actions Grid */
+.actionsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.actionItem {
+  background-color: #f8fafc;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.actionItem:hover {
+  background-color: #eff6ff;
+  border-color: #cbd5e1;
+}
+
+.actionItem span {
+  font-size: 11px;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+/* System Capacity */
+.capacityCard {
+  background-color: #1e3a8a;
+  color: white;
+}
+
+.capacityCard .widgetTitle { color: white; opacity: 0.7; }
+
+.capacityItem {
+  margin-bottom: 24px;
+}
+
+.capacityItem:last-child { margin-bottom: 0; }
+
+.capacityHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.barBg {
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 3px;
+  background-color: white;
+}
+
+.barOrange { background-color: #fb923c; }
+
+/* Maintenance Alert */
+.maintenanceCard {
+  background: white;
+  border-radius: 20px;
+  padding: 20px 32px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-left: 4px solid #1e3a8a;
+}
+
+.alertTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #1e3a8a;
+  text-transform: uppercase;
+}
+
+.alertText {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.alertText strong { color: #1e293b; }
+
+.alertFooter {
+  font-size: 10px;
+  color: #cbd5e1;
+  font-style: italic;
+}
