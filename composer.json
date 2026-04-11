@@ -1,0 +1,15 @@
+{
+  "name": "university-academic-management-system/server",
+  "description": "University Academic Management System - Laravel Backend",
+  "type": "project",
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.2"
+  },
+  "config": {
+    "platform": {
+      "php": "8.2"
+    },
+    "process-timeout": 600
+  }
+}
