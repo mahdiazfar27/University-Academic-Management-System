@@ -1,0 +1,440 @@
+.container {
+  padding: 32px;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: #0f172a;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+}
+
+/* Breadcrumb & Header */
+.breadcrumb {
+  font-size: 11px;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.titleArea h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px;
+}
+
+.semesterText {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.semesterText strong {
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+/* Active Courses Card */
+.statsCard {
+  background: white;
+  border-radius: 16px;
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+}
+
+.iconBox {
+  width: 48px;
+  height: 48px;
+  background-color: #f1f5f9;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e3a8a;
+}
+
+.statsInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.statsLabel {
+  font-size: 10px;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.statsValue {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* Main Content Grid */
+.mainLayout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
+  max-width: 1400px;
+}
+
+@media (max-width: 1200px) {
+  .mainLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Roster Table Card */
+.rosterCard {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.downloadLink {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1e3a8a;
+  text-decoration: none;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.rosterTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.rosterTable th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.rosterTable td {
+  padding: 24px 16px;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.courseCodeBadge {
+  background-color: #eff6ff;
+  color: #1e3a8a;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.courseTitleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.courseTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.courseLevel {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.deptCell {
+  font-size: 14px;
+  color: #475569;
+  font-weight: 500;
+}
+
+/* Sidebar Widgets */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Upcoming Lecture Card */
+.lectureCard {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.2);
+}
+
+.lectureLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.lectureInfo {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.clockIconBox {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lectureTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.lectureMeta {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.startBtn {
+  width: 100%;
+  padding: 14px;
+  background-color: white;
+  color: #1e3a8a;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.startBtn:hover {
+  transform: translateY(-2px);
+}
+
+/* Notices Card */
+.noticesCard {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+}
+
+.noticesHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.noticeDot { width: 8px; height: 8px; background-color: #f97316; border-radius: 50%; }
+
+.noticeList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.noticeItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.noticeTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.noticeTime {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Progress Card */
+.progressCard {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+  position: relative;
+  min-height: 180px;
+}
+
+.semesterImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progressOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+  padding: 24px;
+  color: white;
+}
+
+.semesterLabel {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.progressBarBg {
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progressBarFill {
+  height: 100%;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.progressText {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+/* Bottom Banner */
+.bottomBanner {
+  margin-top: 40px;
+  background: white;
+  border-radius: 20px;
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 4px solid transparent;
+  border-image: linear-gradient(to right, #1e3a8a, transparent) 1;
+  max-width: 1400px;
+}
+
+@media (max-width: 768px) {
+  .bottomBanner {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+    padding: 32px;
+  }
+}
+
+.bannerLeft {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (max-width: 600px) {
+  .bannerLeft {
+    flex-direction: column;
+  }
+}
+
+.bannerIcon {
+  width: 64px;
+  height: 64px;
+  background-color: #f1f5f9;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e3a8a;
+  flex-shrink: 0;
+}
+
+.bannerContent h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px;
+}
+
+.bannerContent p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.bannerBtn {
+  padding: 14px 24px;
+  background-color: white;
+  color: #1e3a8a;
+  border: 2px solid #1e3a8a;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+}
