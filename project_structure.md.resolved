@@ -1,0 +1,243 @@
+# 📁 University Academic Management System — Project Structure
+
+## Overview
+
+```
+University Academic Management System/
+├── server/          ← Laravel Backend (PHP)         [ACTIVE - php artisan serve]
+├── client/          ← React Frontend (Vite)          [ACTIVE - npm run dev]
+├── backend/         ← Older/duplicate Laravel backend (not actively used)
+├── frontend/        ← Older/duplicate React frontend (not actively used)
+├── database/        ← (extra folder, likely legacy)
+├── docs/            ← Documentation files
+├── demo-checklists/ ← Testing checklists
+└── *.md             ← Various project docs & status files
+```
+
+> **Note:** `server/` and `client/` are the **active** directories. `backend/` and `frontend/` appear to be older or duplicate copies.
+
+---
+
+## 🖥️ BACKEND — `server/` (Laravel 10+)
+
+```
+server/
+├── .env                          ← Database config, app key, CORS settings
+├── artisan                       ← Laravel CLI entry point
+├── composer.json                 ← PHP dependencies
+│
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   ├── AuthController.php           ← Login, logout, token management
+│   │   │   ├── Controller.php               ← Base controller
+│   │   │   ├── CourseController.php         ← CRUD for courses
+│   │   │   ├── CourseOfferingController.php ← Course offering management
+│   │   │   ├── DepartmentController.php     ← CRUD for departments
+│   │   │   ├── EnrollmentController.php     ← Student enrollment logic
+│   │   │   ├── ResultController.php         ← Student results/grades
+│   │   │   ├── SemesterController.php       ← Semester management
+│   │   │   ├── StudentController.php        ← Student profile & data
+│   │   │   ├── TeacherController.php        ← Teacher profile & data
+│   │   │   └── UserController.php           ← General user operations
+│   │   │
+│   │   └── Middleware/                      ← Auth middleware (JWT/Sanctum)
+│   │
+│   ├── Models/
+│   │   ├── User.php              ← Auth user (all roles: admin, teacher, student)
+│   │   ├── Student.php           ← Student profile (linked to User)
+│   │   ├── Teacher.php           ← Teacher profile (linked to User)
+│   │   ├── Course.php            ← Course info
+│   │   ├── CourseOffering.php    ← Course assigned to teacher+semester
+│   │   ├── Department.php        ← Academic departments
+│   │   ├── Enrollment.php        ← Student ↔ CourseOffering enrollment
+│   │   ├── Result.php            ← Student grades/results
+│   │   ├── Attendance.php        ← Attendance records
+│   │   ├── MarksEntry.php        ← Marks entered by teacher
+│   │   ├── Payment.php           ← Student payment records
+│   │   ├── Semester.php          ← Semester info
+│   │   └── AdminLog.php          ← Admin activity log
+│   │
+│   ├── Services/                 ← Business logic layer
+│   └── Providers/                ← Laravel service providers
+│
+├── routes/
+│   ├── api.php                   ← All API routes (used by frontend)
+│   ├── web.php                   ← Web routes (minimal)
+│   └── console.php               ← Artisan console routes
+│
+├── database/
+│   ├── migrations/               ← Database table definitions
+│   │   ├── create_users_table.php
+│   │   ├── create_departments_table.php
+│   │   ├── create_semesters_table.php
+│   │   ├── create_teachers_table.php
+│   │   ├── create_students_table.php
+│   │   ├── create_courses_table.php
+│   │   ├── create_course_offerings_table.php
+│   │   ├── create_enrollments_table.php
+│   │   └── create_results_table.php
+│   │
+│   └── seeders/                  ← Sample/test data
+│       ├── DatabaseSeeder.php    ← Master seeder (calls all others)
+│       ├── UserSeeder.php        ← Creates 6 admins, 55 teachers, 280 students
+│       ├── StudentSeeder.php     ← Student profile records
+│       ├── TeacherSeeder.php     ← Teacher profile records
+│       ├── DepartmentSeeder.php  ← Academic departments
+│       ├── SemesterSeeder.php    ← Semester records
+│       ├── CourseSeeder.php      ← Course records
+│       ├── CourseOfferingSeeder.php  ← Course ↔ Teacher assignments
+│       ├── EnrollmentSeeder.php  ← Student course enrollments
+│       └── ResultSeeder.php      ← Sample grades
+│
+├── config/                       ← Laravel config files (auth, cors, db, etc.)
+├── bootstrap/
+│   └── app.php                   ← App bootstrapping & middleware registration
+├── public/
+│   └── index.php                 ← Web server entry point
+├── storage/                      ← Logs, cache, uploaded files
+└── resources/                    ← Blade views (minimal, mostly API-only app)
+```
+
+---
+
+## 🌐 FRONTEND — `client/` (React + Vite)
+
+```
+client/
+├── index.html                    ← HTML entry point
+├── vite.config.js                ← Vite build config
+├── package.json                  ← JS dependencies (React, React Router, Axios, etc.)
+│
+└── src/
+    ├── main.jsx                  ← React app entry point
+    ├── App.jsx                   ← Root component (wraps router + context)
+    ├── App.css                   ← Global app styles
+    ├── index.css                 ← Base/reset CSS
+    │
+    ├── api/
+    │   └── apiService.js         ← Axios API calls to Laravel backend
+    │
+    ├── context/
+    │   └── AuthContext.jsx       ← Global auth state (user, token, login/logout)
+    │
+    ├── hooks/
+    │   └── useAuth.js            ← Custom hook to access AuthContext
+    │
+    ├── router/
+    │   ├── index.jsx             ← All route definitions (React Router)
+    │   └── PrivateRoute.jsx      ← Route guard (redirects if not logged in)
+    │
+    ├── layouts/                  ← Page shells with Sidebar + Header
+    │   ├── AdminLayout.jsx       ← Layout for admin pages
+    │   ├── StudentLayout.jsx     ← Layout for student pages
+    │   ├── TeacherLayout.jsx     ← Layout for teacher pages
+    │   └── Layout.module.css     ← Shared layout styles
+    │
+    ├── components/               ← Shared/reusable UI components
+    │   ├── Sidebar.jsx           ← Navigation sidebar (role-based links)
+    │   ├── Sidebar.module.css
+    │   ├── Header.jsx            ← Top header bar
+    │   └── Header.module.css
+    │
+    └── pages/
+        ├── LandingPage.jsx           ← Public home/landing page
+        ├── LandingPage.module.css
+        ├── LoginPage.jsx             ← Login form (all roles)
+        ├── LoginPage.module.css
+        ├── NotFound.jsx              ← 404 page
+        │
+        ├── admin/                    ← Admin portal pages
+        │   ├── Dashboard.jsx             ← Admin dashboard (stats overview)
+        │   ├── Dashboard.module.css
+        │   ├── UserManagement.jsx        ← Manage all users
+        │   ├── UserManagement.module.css
+        │   ├── DepartmentManagement.jsx  ← Add/edit/delete departments
+        │   ├── DepartmentManagement.module.css
+        │   ├── CourseManagement.jsx      ← Add/edit/delete courses
+        │   ├── CourseManagement.module.css
+        │   ├── AdminNotices.jsx          ← Post/manage notices
+        │   ├── AdminNotices.module.css
+        │   ├── Settings.jsx              ← Admin settings
+        │   └── Settings.module.css
+        │
+        ├── teacher/                  ← Teacher portal pages
+        │   ├── Dashboard.jsx             ← Teacher dashboard
+        │   ├── Dashboard.module.css
+        │   ├── MyCourses.jsx             ← Courses assigned to teacher
+        │   ├── MyCourses.module.css
+        │   ├── Attendance.jsx            ← Mark attendance
+        │   ├── Attendance.module.css
+        │   ├── MarksEntry.jsx            ← Enter student marks
+        │   ├── MarksEntry.module.css
+        │   ├── Schedule.jsx              ← Teacher class schedule
+        │   ├── Schedule.module.css
+        │   ├── Notices.jsx               ← View notices
+        │   └── Notices.module.css
+        │
+        └── student/                  ← Student portal pages
+            ├── Dashboard.jsx             ← Student dashboard
+            ├── Dashboard.module.css
+            ├── ClassRoutine.jsx          ← Class schedule/routine
+            ├── ClassRoutine.module.css
+            ├── Results.jsx               ← View grades/results
+            ├── Results.module.css
+            ├── PaymentHistory.jsx        ← Payment records
+            ├── PaymentHistory.module.css
+            ├── Profile.jsx               ← Student profile
+            ├── Profile.module.css
+            ├── NameCorrection.jsx        ← Name correction request
+            └── NameCorrection.module.css
+```
+
+---
+
+## 🗄️ Database Schema (from migrations)
+
+| Table | Purpose |
+|---|---|
+| `users` | All users — admins, teachers, students (role field differentiates) |
+| `students` | Student-specific profile data (linked to users) |
+| `teachers` | Teacher-specific profile data (linked to users) |
+| `departments` | Academic departments (CSE, EEE, BBA, etc.) |
+| `semesters` | Semester records (Spring 2026, Fall 2025, etc.) |
+| `courses` | Course catalog |
+| `course_offerings` | Course offered in a semester by a teacher |
+| `enrollments` | Which students are enrolled in which course offering |
+| `results` | Student grades per course |
+| `cache` | Laravel cache table |
+| `jobs` | Laravel queue jobs table |
+
+---
+
+## 🔄 How It All Connects
+
+```
+Browser
+  └── React App (client/ → localhost:5173)
+        ├── AuthContext  ← stores JWT token + user info
+        ├── Router       ← role-based routing (admin/teacher/student)
+        ├── Layouts      ← Sidebar + Header shell
+        ├── Pages        ← actual page content
+        └── apiService   ← makes HTTP requests to →
+              Laravel API (server/ → localhost:8000)
+                ├── routes/api.php      ← route definitions
+                ├── Controllers/        ← handle requests
+                ├── Models/             ← query the database
+                └── MySQL (XAMPP)       ← data storage
+```
+
+---
+
+## 📌 Key Files to Know
+
+| File | Why it matters |
+|---|---|
+| `server/.env` | DB connection, app key, CORS origin |
+| `server/routes/api.php` | All backend API endpoints |
+| `server/app/Http/Controllers/AuthController.php` | Login logic |
+| `server/database/seeders/UserSeeder.php` | Where test credentials come from |
+| `client/src/api/apiService.js` | Base URL & all API calls |
+| `client/src/context/AuthContext.jsx` | Auth state management |
+| `client/src/router/index.jsx` | All frontend routes |
+| `client/src/router/PrivateRoute.jsx` | Route protection logic |
