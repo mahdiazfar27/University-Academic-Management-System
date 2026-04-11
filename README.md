@@ -1,6 +1,6 @@
 # Project Proposal
 
-# Project Name : *University-Student-Service-Portal*
+# Project Name : *University-Academic-Management-System*
 
 ---
 
